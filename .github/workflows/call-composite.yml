@@ -1,0 +1,11 @@
+name: Demos the Composite action
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: chocrates-test-org/didactic-robot@main
+      
