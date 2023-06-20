@@ -1,0 +1,8 @@
+on:
+  workflow_dispatch:
+  
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: chocrates-test-org/expert-engine@aab238bf5194427f684205c6d8548c60e1291760
