@@ -7,19 +7,19 @@ on:
   pull_request:
     branches: [ "main" ]
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-    inputs:
-      commit:
-        description: 'commit in which to check out'
-        required: true
-        type: string
-    
-
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
+
+env:
+  first-one: "value 1"
+  
 jobs:
   # This workflow contains a single job called "build"
   build:
+    defaults:
+      run:
+        shell: cmd
+    env:
+      key: value
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -29,5 +29,6 @@ jobs:
       - uses: actions/checkout@v3
         with: 
           ref: ${{ inputs.commit }}
-      - run: git status
-
+      - run: echo $key2
+        env:
+          key2: "value2"
